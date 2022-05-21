@@ -8,13 +8,13 @@ services:
 
   nowports-api-ms:
     build:
-      context: ${REPO_PATH_NOWPORTS_API_MS}
-      dockerfile: ${REPO_PATH_INFRASTRUCTURE}/nowports/docker/nowports-api-ms/Dockerfile
+      context: ${REPO_PATH}/nowports-api-ms
+      dockerfile: ${REPO_PATH}/docker-infra/nowports/docker/nowports-api-ms/Dockerfile
     volumes:
-      - ${REPO_PATH_NOWPORTS_API_MS}/src:/usr/src/app/src
-      - ${REPO_PATH_NOWPORTS_API_MS}/.env:/usr/src/app/.env
-      - ${REPO_PATH_NOWPORTS_API_MS}/package.json:/usr/src/app/package.json
-      - ${REPO_PATH_NOWPORTS_API_MS}/package-lock.json:/usr/src/app/package-lock.json
+      - ${REPO_PATH}/nowports-api-ms/src:/usr/src/app/src
+      - ${REPO_PATH}/nowports-api-ms/.env:/usr/src/app/.env
+      - ${REPO_PATH}/nowports-api-ms/package.json:/usr/src/app/package.json
+      - ${REPO_PATH}/nowports-api-ms/package-lock.json:/usr/src/app/package-lock.json
     stdin_open: true
     restart: unless-stopped
     tty: true
@@ -27,8 +27,8 @@ services:
   mysql:
     container_name: mysql
     build:
-      context: ${SQL_DATA}
-      dockerfile: ${REPO_PATH_INFRASTRUCTURE}/mysql/docker/Dockerfile
+      context: ${REPO_PATH}/docker-infra/mysql
+      dockerfile: ${REPO_PATH}/docker-infra/mysql/docker/Dockerfile
     restart: unless-stopped
     stdin_open: true
     tty: true

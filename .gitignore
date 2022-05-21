@@ -1,6 +1,6 @@
 .idea
-/docker-infra/nowports/.env
 .DS_Store
+.env
 
 # DOCKER IGNORE
 /docker-infra/mysql/data/
