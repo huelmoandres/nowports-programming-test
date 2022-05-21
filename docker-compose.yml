@@ -39,6 +39,6 @@ services:
       MYSQL_PASSWORD: toor
       MYSQL_USER: nowports
     volumes:
-      - ./data/var/lib/mysql:/var/lib/mysql
-      - ./log:/var/log/mysql/
+      - ${REPO_PATH}/docker-infra/mysql/data/var/lib/mysql:/var/lib/mysql
+      - ${REPO_PATH}/docker-infra/mysql/log:/var/log/mysql/
 
