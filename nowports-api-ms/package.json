@@ -1,0 +1,17 @@
+{
+  "name": "nowports",
+  "version": "1.0.0",
+  "description": "nowports api ms",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "nowports"
+  ],
+  "author": "Andrés Huelmo",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}

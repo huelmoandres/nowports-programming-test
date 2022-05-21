@@ -1,0 +1,16 @@
+.idea
+/docker-infra/nowports/.env
+.DS_Store
+
+# DOCKER IGNORE
+/docker-infra/mysql/data/
+/docker-infra/mysql/sql/
+/docker-infra/mysql/log/
+
+/docker-infra/mysql/.DS_Store
+/docker-infra/mysql/etc/.DS_Store
+
+# DOCKER NOWPORTS-API-MS
+/nowports-api-ms/.idea
+/nowports-api-ms/node_modules
+/nowports-api-ms/.env

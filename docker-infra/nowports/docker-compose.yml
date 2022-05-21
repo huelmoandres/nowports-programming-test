@@ -1,0 +1,44 @@
+version: "3.8"
+
+#docker-compose build
+#docker-compose up -d
+#docker-compose down  --remove-orphans
+
+services:
+
+  nowports-api-ms:
+    build:
+      context: ${REPO_PATH_NOWPORTS_API_MS}
+      dockerfile: ${REPO_PATH_INFRASTRUCTURE}/nowports/docker/nowports-api-ms/Dockerfile
+    volumes:
+      - ${REPO_PATH_NOWPORTS_API_MS}/src:/usr/src/app/src
+      - ${REPO_PATH_NOWPORTS_API_MS}/.env:/usr/src/app/.env
+      - ${REPO_PATH_NOWPORTS_API_MS}/package.json:/usr/src/app/package.json
+      - ${REPO_PATH_NOWPORTS_API_MS}/package-lock.json:/usr/src/app/package-lock.json
+    stdin_open: true
+    restart: unless-stopped
+    tty: true
+    container_name: nowports-api-ms
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mysql
+
+  mysql:
+    container_name: mysql
+    build:
+      context: ${SQL_DATA}
+      dockerfile: ${REPO_PATH_INFRASTRUCTURE}/mysql/docker/Dockerfile
+    restart: unless-stopped
+    stdin_open: true
+    tty: true
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: toor
+      MYSQL_PASSWORD: toor
+      MYSQL_USER: nowports
+    volumes:
+      - ./data/var/lib/mysql:/var/lib/mysql
+      - ./log:/var/log/mysql/
+
