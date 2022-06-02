@@ -5,10 +5,10 @@ WORKDIR /usr/src/app
 COPY .env ./
 COPY package.json ./
 COPY package-lock.json ./
+COPY tsconfig.json ./
 COPY ./src ./src
-COPY .sequelizerc ./
-COPY all ./
+COPY ./public ./public
 
 RUN npm install
 
-CMD node ./src/api/index.js
+CMD [ "npm", "run", "start" ]

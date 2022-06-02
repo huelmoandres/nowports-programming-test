@@ -1,0 +1,297 @@
+[2022-05-23T23:10:47.725] [ERROR] {errors} - ReferenceError: getUserByEmail is not defined
+    at module.exports (/usr/src/app/src/api/components/contacts/controller.js:52:3)
+    at create (/usr/src/app/src/api/components/contacts/network.js:14:5)
+    at Layer.handle [as handle_request] (/usr/src/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/usr/src/app/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/usr/src/app/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/usr/src/app/node_modules/express/lib/router/layer.js:95:5)
+    at /usr/src/app/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/usr/src/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/usr/src/app/node_modules/express/lib/router/index.js:280:10)
+    at /usr/src/app/src/api/components/auth/secure.js:16:21
+[2022-05-23T23:12:53.251] [ERROR] {errors} - SyntaxError: Unexpected string in JSON at position 107
+    at JSON.parse (<anonymous>)
+    at parse (/usr/src/app/node_modules/body-parser/lib/types/json.js:89:19)
+    at /usr/src/app/node_modules/body-parser/lib/read.js:128:18
+    at AsyncResource.runInAsyncScope (node:async_hooks:202:9)
+    at invokeCallback (/usr/src/app/node_modules/raw-body/index.js:231:16)
+    at done (/usr/src/app/node_modules/raw-body/index.js:220:7)
+    at IncomingMessage.onEnd (/usr/src/app/node_modules/raw-body/index.js:280:7)
+    at IncomingMessage.emit (node:events:539:35)
+    at endReadableNT (node:internal/streams/readable:1345:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21) {
+  expose: true,
+  statusCode: 400,
+  status: 400,
+  body: '{\n' +
+    '    "firstName": "Andrés",\n' +
+    '    "lastName": "Huelmo",\n' +
+    '    "userId": "22",\n' +
+    '    "phone": "+59891383578"\n' +
+    '    "addresses": "asdas"\n' +
+    '}',
+  type: 'entity.parse.failed'
+}
+[2022-05-23T23:14:21.798] [ERROR] {errors} - ValidationError [SequelizeValidationError]: notNull Violation: Contact.address cannot be null
+    at InstanceValidator._validate (/usr/src/app/node_modules/sequelize/lib/instance-validator.js:50:13)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async InstanceValidator._validateAndRunHooks (/usr/src/app/node_modules/sequelize/lib/instance-validator.js:60:7)
+    at async InstanceValidator.validate (/usr/src/app/node_modules/sequelize/lib/instance-validator.js:54:12)
+    at async model.save (/usr/src/app/node_modules/sequelize/lib/model.js:2360:7)
+    at async /usr/src/app/node_modules/sequelize/lib/model.js:2475:13
+    at async Promise.all (index 0)
+    at async /usr/src/app/node_modules/sequelize/lib/model.js:2456:9
+    at async Promise.all (index 0)
+    at async model.save (/usr/src/app/node_modules/sequelize/lib/model.js:2445:7) {
+  errors: [
+    ValidationErrorItem {
+      message: 'Contact.address cannot be null',
+      type: 'notNull Violation',
+      path: 'address',
+      value: null,
+      origin: 'CORE',
+      instance: [Contact],
+      validatorKey: 'is_null',
+      validatorName: null,
+      validatorArgs: []
+    }
+  ]
+}
+[2022-05-23T23:15:33.804] [ERROR] {errors} - Error
+    at Query.run (/usr/src/app/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /usr/src/app/node_modules/sequelize/lib/sequelize.js:310:28
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async MySQLQueryInterface.insert (/usr/src/app/node_modules/sequelize/lib/dialects/abstract/query-interface.js:297:21)
+    at async model.save (/usr/src/app/node_modules/sequelize/lib/model.js:2424:35)
+    at async /usr/src/app/node_modules/sequelize/lib/model.js:2475:13
+    at async Promise.all (index 0)
+    at async /usr/src/app/node_modules/sequelize/lib/model.js:2456:9
+    at async Promise.all (index 0)
+    at async model.save (/usr/src/app/node_modules/sequelize/lib/model.js:2445:7) {
+  name: 'SequelizeDatabaseError',
+  parent: Error: Unknown column 'address' in 'field list'
+      at Packet.asError (/usr/src/app/node_modules/mysql2/lib/packets/packet.js:728:17)
+      at Prepare.execute (/usr/src/app/node_modules/mysql2/lib/commands/command.js:29:26)
+      at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/connection.js:456:32)
+      at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/connection.js:85:12)
+      at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+      at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/connection.js:92:25)
+      at Socket.emit (node:events:527:28)
+      at addChunk (node:internal/streams/readable:315:12)
+      at readableAddChunk (node:internal/streams/readable:289:9)
+      at Socket.Readable.push (node:internal/streams/readable:228:10) {
+    code: 'ER_BAD_FIELD_ERROR',
+    errno: 1054,
+    sqlState: '42S22',
+    sqlMessage: "Unknown column 'address' in 'field list'",
+    sql: 'INSERT INTO `contacts` (`id`,`address`,`created_at`,`updated_at`,`contact_id`) VALUES (DEFAULT,?,?,?,?);',
+    parameters: [ 'Dirección 1', '2022-05-23 23:15:33', '2022-05-23 23:15:33', 2 ]
+  },
+  original: Error: Unknown column 'address' in 'field list'
+      at Packet.asError (/usr/src/app/node_modules/mysql2/lib/packets/packet.js:728:17)
+      at Prepare.execute (/usr/src/app/node_modules/mysql2/lib/commands/command.js:29:26)
+      at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/connection.js:456:32)
+      at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/connection.js:85:12)
+      at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+      at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/connection.js:92:25)
+      at Socket.emit (node:events:527:28)
+      at addChunk (node:internal/streams/readable:315:12)
+      at readableAddChunk (node:internal/streams/readable:289:9)
+      at Socket.Readable.push (node:internal/streams/readable:228:10) {
+    code: 'ER_BAD_FIELD_ERROR',
+    errno: 1054,
+    sqlState: '42S22',
+    sqlMessage: "Unknown column 'address' in 'field list'",
+    sql: 'INSERT INTO `contacts` (`id`,`address`,`created_at`,`updated_at`,`contact_id`) VALUES (DEFAULT,?,?,?,?);',
+    parameters: [ 'Dirección 1', '2022-05-23 23:15:33', '2022-05-23 23:15:33', 2 ]
+  },
+  sql: 'INSERT INTO `contacts` (`id`,`address`,`created_at`,`updated_at`,`contact_id`) VALUES (DEFAULT,?,?,?,?);',
+  parameters: [ 'Dirección 1', '2022-05-23 23:15:33', '2022-05-23 23:15:33', 2 ]
+}
+[2022-05-23T23:24:05.385] [ERROR] {errors} - EagerLoadingError [SequelizeEagerLoadingError]: Contact is associated to Contact using an alias. You've included an alias (addressess), but it does not match the alias(es) defined in your association (addresses).
+    at Function._getIncludedAssociation (/usr/src/app/node_modules/sequelize/lib/model.js:574:15)
+    at Function._validateIncludedElement (/usr/src/app/node_modules/sequelize/lib/model.js:502:53)
+    at /usr/src/app/node_modules/sequelize/lib/model.js:421:37
+    at Array.map (<anonymous>)
+    at Function._validateIncludedElements (/usr/src/app/node_modules/sequelize/lib/model.js:417:39)
+    at new Model (/usr/src/app/node_modules/sequelize/lib/model.js:107:26)
+    at new Contact (/usr/src/app/node_modules/sequelize/lib/sequelize.js:218:19)
+    at Function.build (/usr/src/app/node_modules/sequelize/lib/model.js:1318:12)
+    at Function.create (/usr/src/app/node_modules/sequelize/lib/model.js:1336:23)
+    at Object.create (/usr/src/app/src/api/components/contacts/controller.js:26:18)
+[2022-05-31T22:59:59.928] [ERROR] {auth/controller} - Password not match
+[2022-05-31T23:02:52.524] [ERROR] {auth/controller} - Password not match
+[2022-05-31T23:55:19.706] [ERROR] {auth/controller} - Password not match
+[2022-06-01T00:04:12.636] [ERROR] {auth/controller} - Password not match
+[2022-06-01T13:12:21.660] [ERROR] {auth/controller} - Password not match
+[2022-06-01T13:19:17.450] [ERROR] {auth/controller} - Password not match
+[2022-06-01T13:23:03.925] [ERROR] {auth/controller} - Password not match
+[2022-06-01T13:23:07.712] [ERROR] {auth/controller} - Password not match
+[2022-06-01T13:23:17.143] [ERROR] {auth/controller} - Password not match
+[2022-06-01T13:25:14.838] [ERROR] {auth/controller} - Password not match
+[2022-06-01T13:35:08.947] [ERROR] {auth/controller} - Password not match
+[2022-06-01T13:35:15.546] [ERROR] {auth/controller} - Password not match
+[2022-06-01T13:36:58.678] [ERROR] {auth/controller} - Password not match
+[2022-06-01T14:20:42.981] [ERROR] {auth/controller} - Password not match
+[2022-06-01T15:39:26.041] [ERROR] {auth/controller} - Password not match
+[2022-06-01T15:39:37.926] [ERROR] {auth/controller} - Password not match
+[2022-06-01T15:41:00.088] [ERROR] {auth/controller} - Password not match
+[2022-06-01T15:42:05.677] [ERROR] {auth/controller} - Password not match
+[2022-06-01T15:43:53.153] [ERROR] {auth/controller} - Password not match
+[2022-06-01T15:55:19.382] [ERROR] {auth/controller} - Password not match
+[2022-06-01T15:55:28.622] [ERROR] {auth/controller} - Password not match
+[2022-06-01T15:55:33.839] [ERROR] {auth/controller} - Password not match
+[2022-06-01T20:16:26.116] [ERROR] {auth/controller} - Password not match
+[2022-06-02T12:25:47.069] [ERROR] {errors} - Error
+    at Query.run (/usr/src/app/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /usr/src/app/node_modules/sequelize/lib/sequelize.js:310:28
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async MySQLQueryInterface.delete (/usr/src/app/node_modules/sequelize/lib/dialects/abstract/query-interface.js:382:12)
+    at async model.destroy (/usr/src/app/node_modules/sequelize/lib/model.js:2549:16)
+    at async Object.deleteContact (/usr/src/app/src/api/components/contacts/controller.js:100:3) {
+  name: 'SequelizeForeignKeyConstraintError',
+  parent: Error: Cannot delete or update a parent row: a foreign key constraint fails (`db_nowports`.`addresses`, CONSTRAINT `addresses_ibfk_1` FOREIGN KEY (`contact_id`) REFERENCES `contacts` (`id`))
+      at Packet.asError (/usr/src/app/node_modules/mysql2/lib/packets/packet.js:728:17)
+      at Query.execute (/usr/src/app/node_modules/mysql2/lib/commands/command.js:29:26)
+      at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/connection.js:456:32)
+      at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/connection.js:85:12)
+      at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+      at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/connection.js:92:25)
+      at Socket.emit (node:events:527:28)
+      at addChunk (node:internal/streams/readable:315:12)
+      at readableAddChunk (node:internal/streams/readable:289:9)
+      at Socket.Readable.push (node:internal/streams/readable:228:10) {
+    code: 'ER_ROW_IS_REFERENCED_2',
+    errno: 1451,
+    sqlState: '23000',
+    sqlMessage: 'Cannot delete or update a parent row: a foreign key constraint fails (`db_nowports`.`addresses`, CONSTRAINT `addresses_ibfk_1` FOREIGN KEY (`contact_id`) REFERENCES `contacts` (`id`))',
+    sql: 'DELETE FROM `contacts` WHERE `id` = 6',
+    parameters: undefined
+  },
+  original: Error: Cannot delete or update a parent row: a foreign key constraint fails (`db_nowports`.`addresses`, CONSTRAINT `addresses_ibfk_1` FOREIGN KEY (`contact_id`) REFERENCES `contacts` (`id`))
+      at Packet.asError (/usr/src/app/node_modules/mysql2/lib/packets/packet.js:728:17)
+      at Query.execute (/usr/src/app/node_modules/mysql2/lib/commands/command.js:29:26)
+      at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/connection.js:456:32)
+      at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/connection.js:85:12)
+      at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+      at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/connection.js:92:25)
+      at Socket.emit (node:events:527:28)
+      at addChunk (node:internal/streams/readable:315:12)
+      at readableAddChunk (node:internal/streams/readable:289:9)
+      at Socket.Readable.push (node:internal/streams/readable:228:10) {
+    code: 'ER_ROW_IS_REFERENCED_2',
+    errno: 1451,
+    sqlState: '23000',
+    sqlMessage: 'Cannot delete or update a parent row: a foreign key constraint fails (`db_nowports`.`addresses`, CONSTRAINT `addresses_ibfk_1` FOREIGN KEY (`contact_id`) REFERENCES `contacts` (`id`))',
+    sql: 'DELETE FROM `contacts` WHERE `id` = 6',
+    parameters: undefined
+  },
+  sql: 'DELETE FROM `contacts` WHERE `id` = 6',
+  parameters: {},
+  table: 'contacts',
+  fields: [ 'contact_id' ],
+  value: undefined,
+  index: 'addresses_ibfk_1',
+  reltype: 'parent'
+}
+[2022-06-02T12:25:59.432] [ERROR] {errors} - Error
+    at Query.run (/usr/src/app/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /usr/src/app/node_modules/sequelize/lib/sequelize.js:310:28
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async MySQLQueryInterface.delete (/usr/src/app/node_modules/sequelize/lib/dialects/abstract/query-interface.js:382:12)
+    at async model.destroy (/usr/src/app/node_modules/sequelize/lib/model.js:2549:16)
+    at async Object.deleteContact (/usr/src/app/src/api/components/contacts/controller.js:100:3) {
+  name: 'SequelizeForeignKeyConstraintError',
+  parent: Error: Cannot delete or update a parent row: a foreign key constraint fails (`db_nowports`.`addresses`, CONSTRAINT `addresses_ibfk_1` FOREIGN KEY (`contact_id`) REFERENCES `contacts` (`id`))
+      at Packet.asError (/usr/src/app/node_modules/mysql2/lib/packets/packet.js:728:17)
+      at Query.execute (/usr/src/app/node_modules/mysql2/lib/commands/command.js:29:26)
+      at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/connection.js:456:32)
+      at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/connection.js:85:12)
+      at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+      at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/connection.js:92:25)
+      at Socket.emit (node:events:527:28)
+      at addChunk (node:internal/streams/readable:315:12)
+      at readableAddChunk (node:internal/streams/readable:289:9)
+      at Socket.Readable.push (node:internal/streams/readable:228:10) {
+    code: 'ER_ROW_IS_REFERENCED_2',
+    errno: 1451,
+    sqlState: '23000',
+    sqlMessage: 'Cannot delete or update a parent row: a foreign key constraint fails (`db_nowports`.`addresses`, CONSTRAINT `addresses_ibfk_1` FOREIGN KEY (`contact_id`) REFERENCES `contacts` (`id`))',
+    sql: 'DELETE FROM `contacts` WHERE `id` = 6',
+    parameters: undefined
+  },
+  original: Error: Cannot delete or update a parent row: a foreign key constraint fails (`db_nowports`.`addresses`, CONSTRAINT `addresses_ibfk_1` FOREIGN KEY (`contact_id`) REFERENCES `contacts` (`id`))
+      at Packet.asError (/usr/src/app/node_modules/mysql2/lib/packets/packet.js:728:17)
+      at Query.execute (/usr/src/app/node_modules/mysql2/lib/commands/command.js:29:26)
+      at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/connection.js:456:32)
+      at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/connection.js:85:12)
+      at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+      at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/connection.js:92:25)
+      at Socket.emit (node:events:527:28)
+      at addChunk (node:internal/streams/readable:315:12)
+      at readableAddChunk (node:internal/streams/readable:289:9)
+      at Socket.Readable.push (node:internal/streams/readable:228:10) {
+    code: 'ER_ROW_IS_REFERENCED_2',
+    errno: 1451,
+    sqlState: '23000',
+    sqlMessage: 'Cannot delete or update a parent row: a foreign key constraint fails (`db_nowports`.`addresses`, CONSTRAINT `addresses_ibfk_1` FOREIGN KEY (`contact_id`) REFERENCES `contacts` (`id`))',
+    sql: 'DELETE FROM `contacts` WHERE `id` = 6',
+    parameters: undefined
+  },
+  sql: 'DELETE FROM `contacts` WHERE `id` = 6',
+  parameters: {},
+  table: 'contacts',
+  fields: [ 'contact_id' ],
+  value: undefined,
+  index: 'addresses_ibfk_1',
+  reltype: 'parent'
+}
+[2022-06-02T12:33:47.897] [ERROR] {errors} - Error
+    at Query.run (/usr/src/app/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /usr/src/app/node_modules/sequelize/lib/sequelize.js:310:28
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async MySQLQueryInterface.bulkUpdate (/usr/src/app/node_modules/sequelize/lib/dialects/abstract/query-interface.js:355:12)
+    at async Function.update (/usr/src/app/node_modules/sequelize/lib/model.js:1950:28)
+    at async Promise.all (index 0)
+    at async HasMany.set (/usr/src/app/node_modules/sequelize/lib/associations/has-many.js:254:5)
+    at async Object.deleteContact (/usr/src/app/src/api/components/contacts/controller.js:101:3) {
+  name: 'SequelizeDatabaseError',
+  parent: Error: Column 'contact_id' cannot be null
+      at Packet.asError (/usr/src/app/node_modules/mysql2/lib/packets/packet.js:728:17)
+      at Execute.execute (/usr/src/app/node_modules/mysql2/lib/commands/command.js:29:26)
+      at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/connection.js:456:32)
+      at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/connection.js:85:12)
+      at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+      at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/connection.js:92:25)
+      at Socket.emit (node:events:527:28)
+      at addChunk (node:internal/streams/readable:315:12)
+      at readableAddChunk (node:internal/streams/readable:289:9)
+      at Socket.Readable.push (node:internal/streams/readable:228:10) {
+    code: 'ER_BAD_NULL_ERROR',
+    errno: 1048,
+    sqlState: '23000',
+    sqlMessage: "Column 'contact_id' cannot be null",
+    sql: 'UPDATE `addresses` SET `contact_id`=?,`updated_at`=? WHERE `id` IN (7, 8)',
+    parameters: [ null, '2022-06-02 12:33:47' ]
+  },
+  original: Error: Column 'contact_id' cannot be null
+      at Packet.asError (/usr/src/app/node_modules/mysql2/lib/packets/packet.js:728:17)
+      at Execute.execute (/usr/src/app/node_modules/mysql2/lib/commands/command.js:29:26)
+      at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/connection.js:456:32)
+      at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/connection.js:85:12)
+      at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+      at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/connection.js:92:25)
+      at Socket.emit (node:events:527:28)
+      at addChunk (node:internal/streams/readable:315:12)
+      at readableAddChunk (node:internal/streams/readable:289:9)
+      at Socket.Readable.push (node:internal/streams/readable:228:10) {
+    code: 'ER_BAD_NULL_ERROR',
+    errno: 1048,
+    sqlState: '23000',
+    sqlMessage: "Column 'contact_id' cannot be null",
+    sql: 'UPDATE `addresses` SET `contact_id`=?,`updated_at`=? WHERE `id` IN (7, 8)',
+    parameters: [ null, '2022-06-02 12:33:47' ]
+  },
+  sql: 'UPDATE `addresses` SET `contact_id`=?,`updated_at`=? WHERE `id` IN (7, 8)',
+  parameters: [ null, '2022-06-02 12:33:47' ]
+}

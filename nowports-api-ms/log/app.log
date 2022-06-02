@@ -1,0 +1,794 @@
+[2022-05-21T21:01:44.075] [INFO] index startup - Express server listening on port  3001
+[2022-05-21T21:01:51.130] [ERROR] {errors} - ConnectionRefusedError [SequelizeConnectionRefusedError]: connect ECONNREFUSED 127.0.0.1:3306
+    at ConnectionManager.connect (/usr/src/app/node_modules/sequelize/lib/dialects/mysql/connection-manager.js:92:17)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async ConnectionManager._connect (/usr/src/app/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:216:24)
+    at async /usr/src/app/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:174:32
+    at async ConnectionManager.getConnection (/usr/src/app/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:197:7)
+    at async /usr/src/app/node_modules/sequelize/lib/sequelize.js:300:26
+    at async MySQLQueryInterface.select (/usr/src/app/node_modules/sequelize/lib/dialects/abstract/query-interface.js:396:12)
+    at async Function.findAll (/usr/src/app/node_modules/sequelize/lib/model.js:1126:21)
+    at async Function.findOne (/usr/src/app/node_modules/sequelize/lib/model.js:1220:12)
+    at async Object.getUserByEmail (/usr/src/app/src/api/components/user/controller.js:18:17) {
+  parent: Error: connect ECONNREFUSED 127.0.0.1:3306
+      at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1187:16) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '127.0.0.1',
+    port: 3306,
+    fatal: true
+  },
+  original: Error: connect ECONNREFUSED 127.0.0.1:3306
+      at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1187:16) {
+    errno: -111,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '127.0.0.1',
+    port: 3306,
+    fatal: true
+  }
+}
+[2022-05-21T21:12:07.404] [INFO] index startup - Express server listening on port  3001
+[2022-05-21T21:13:19.779] [INFO] index startup - Express server listening on port  3001
+[2022-05-21T21:13:23.464] [WARN] {user/controller} - User: user not found
+[2022-05-21T21:17:56.439] [INFO] index startup - Express server listening on port  3001
+[2022-05-21T21:20:47.938] [INFO] index startup - Express server listening on port  3001
+[2022-05-21T21:21:08.956] [WARN] {user/controller} - User: user not found
+[2022-05-21T21:25:49.676] [ERROR] {errors} - Error: secretOrPrivateKey must have a value
+    at Object.module.exports [as sign] (/usr/src/app/node_modules/jsonwebtoken/sign.js:107:20)
+    at Object.sign (/usr/src/app/src/auth/index.js:9:16)
+    at /usr/src/app/src/api/components/auth/controller.js:19:37
+[2022-05-21T21:30:16.860] [ERROR] {errors} - Error: secretOrPrivateKey must have a value
+    at Object.module.exports [as sign] (/usr/src/app/node_modules/jsonwebtoken/sign.js:107:20)
+    at Object.sign (/usr/src/app/src/auth/index.js:9:16)
+    at /usr/src/app/src/api/components/auth/controller.js:19:37
+[2022-05-21T21:31:56.395] [INFO] index startup - Express server listening on port  3001
+[2022-05-21T21:32:04.407] [ERROR] {errors} - Error: secretOrPrivateKey must have a value
+    at Object.module.exports [as sign] (/usr/src/app/node_modules/jsonwebtoken/sign.js:107:20)
+    at Object.sign (/usr/src/app/src/auth/index.js:10:16)
+    at /usr/src/app/src/api/components/auth/controller.js:19:37
+[2022-05-21T21:36:50.388] [INFO] index startup - Express server listening on port  3001
+[2022-05-21T22:11:21.418] [INFO] index startup - Express server listening on port  3001
+[2022-05-21T22:12:50.178] [INFO] index startup - Express server listening on port  3001
+[2022-05-21T22:18:51.814] [INFO] index startup - Express server listening on port  3001
+[2022-05-21T22:27:39.411] [INFO] index startup - Express server listening on port  3001
+[2022-05-22T18:43:41.299] [INFO] index startup - Express server listening on port  3001
+[2022-05-22T18:50:21.471] [WARN] {user/controller} - Auth: token required.
+[2022-05-22T18:51:00.279] [ERROR] {errors} - Error
+    at Query.run (/usr/src/app/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /usr/src/app/node_modules/sequelize/lib/sequelize.js:310:28
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async MySQLQueryInterface.select (/usr/src/app/node_modules/sequelize/lib/dialects/abstract/query-interface.js:396:12)
+    at async Function.findAll (/usr/src/app/node_modules/sequelize/lib/model.js:1126:21)
+    at async Function.findOne (/usr/src/app/node_modules/sequelize/lib/model.js:1220:12)
+    at async Object.getUserByEmail (/usr/src/app/src/api/components/user/controller.js:18:17)
+    at async Object.login (/usr/src/app/src/api/components/auth/controller.js:14:22) {
+  name: 'SequelizeDatabaseError',
+  parent: Error: Table 'db_nowports.users' doesn't exist
+      at Packet.asError (/usr/src/app/node_modules/mysql2/lib/packets/packet.js:728:17)
+      at Query.execute (/usr/src/app/node_modules/mysql2/lib/commands/command.js:29:26)
+      at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/connection.js:456:32)
+      at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/connection.js:85:12)
+      at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+      at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/connection.js:92:25)
+      at Socket.emit (node:events:527:28)
+      at addChunk (node:internal/streams/readable:315:12)
+      at readableAddChunk (node:internal/streams/readable:289:9)
+      at Socket.Readable.push (node:internal/streams/readable:228:10) {
+    code: 'ER_NO_SUCH_TABLE',
+    errno: 1146,
+    sqlState: '42S02',
+    sqlMessage: "Table 'db_nowports.users' doesn't exist",
+    sql: "SELECT `name`, `last_name` AS `lastName`, `email`, `password` FROM `users` AS `User` WHERE `User`.`email` = 'test@Nowports.com' AND `User`.`deleted_at` IS NULL LIMIT 1;",
+    parameters: undefined
+  },
+  original: Error: Table 'db_nowports.users' doesn't exist
+      at Packet.asError (/usr/src/app/node_modules/mysql2/lib/packets/packet.js:728:17)
+      at Query.execute (/usr/src/app/node_modules/mysql2/lib/commands/command.js:29:26)
+      at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/connection.js:456:32)
+      at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/connection.js:85:12)
+      at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+      at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/connection.js:92:25)
+      at Socket.emit (node:events:527:28)
+      at addChunk (node:internal/streams/readable:315:12)
+      at readableAddChunk (node:internal/streams/readable:289:9)
+      at Socket.Readable.push (node:internal/streams/readable:228:10) {
+    code: 'ER_NO_SUCH_TABLE',
+    errno: 1146,
+    sqlState: '42S02',
+    sqlMessage: "Table 'db_nowports.users' doesn't exist",
+    sql: "SELECT `name`, `last_name` AS `lastName`, `email`, `password` FROM `users` AS `User` WHERE `User`.`email` = 'test@Nowports.com' AND `User`.`deleted_at` IS NULL LIMIT 1;",
+    parameters: undefined
+  },
+  sql: "SELECT `name`, `last_name` AS `lastName`, `email`, `password` FROM `users` AS `User` WHERE `User`.`email` = 'test@Nowports.com' AND `User`.`deleted_at` IS NULL LIMIT 1;",
+  parameters: {}
+}
+[2022-05-22T18:51:17.593] [ERROR] {errors} - Error
+    at Query.run (/usr/src/app/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /usr/src/app/node_modules/sequelize/lib/sequelize.js:310:28
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async MySQLQueryInterface.select (/usr/src/app/node_modules/sequelize/lib/dialects/abstract/query-interface.js:396:12)
+    at async Function.findAll (/usr/src/app/node_modules/sequelize/lib/model.js:1126:21)
+    at async Function.findOne (/usr/src/app/node_modules/sequelize/lib/model.js:1220:12)
+    at async Object.getUserByEmail (/usr/src/app/src/api/components/user/controller.js:18:17)
+    at async Object.login (/usr/src/app/src/api/components/auth/controller.js:14:22) {
+  name: 'SequelizeDatabaseError',
+  parent: Error: Table 'db_nowports.users' doesn't exist
+      at Packet.asError (/usr/src/app/node_modules/mysql2/lib/packets/packet.js:728:17)
+      at Query.execute (/usr/src/app/node_modules/mysql2/lib/commands/command.js:29:26)
+      at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/connection.js:456:32)
+      at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/connection.js:85:12)
+      at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+      at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/connection.js:92:25)
+      at Socket.emit (node:events:527:28)
+      at addChunk (node:internal/streams/readable:315:12)
+      at readableAddChunk (node:internal/streams/readable:289:9)
+      at Socket.Readable.push (node:internal/streams/readable:228:10) {
+    code: 'ER_NO_SUCH_TABLE',
+    errno: 1146,
+    sqlState: '42S02',
+    sqlMessage: "Table 'db_nowports.users' doesn't exist",
+    sql: "SELECT `name`, `last_name` AS `lastName`, `email`, `password` FROM `users` AS `User` WHERE `User`.`email` = 'test@Nowports.com' AND `User`.`deleted_at` IS NULL LIMIT 1;",
+    parameters: undefined
+  },
+  original: Error: Table 'db_nowports.users' doesn't exist
+      at Packet.asError (/usr/src/app/node_modules/mysql2/lib/packets/packet.js:728:17)
+      at Query.execute (/usr/src/app/node_modules/mysql2/lib/commands/command.js:29:26)
+      at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/connection.js:456:32)
+      at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/connection.js:85:12)
+      at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+      at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/connection.js:92:25)
+      at Socket.emit (node:events:527:28)
+      at addChunk (node:internal/streams/readable:315:12)
+      at readableAddChunk (node:internal/streams/readable:289:9)
+      at Socket.Readable.push (node:internal/streams/readable:228:10) {
+    code: 'ER_NO_SUCH_TABLE',
+    errno: 1146,
+    sqlState: '42S02',
+    sqlMessage: "Table 'db_nowports.users' doesn't exist",
+    sql: "SELECT `name`, `last_name` AS `lastName`, `email`, `password` FROM `users` AS `User` WHERE `User`.`email` = 'test@Nowports.com' AND `User`.`deleted_at` IS NULL LIMIT 1;",
+    parameters: undefined
+  },
+  sql: "SELECT `name`, `last_name` AS `lastName`, `email`, `password` FROM `users` AS `User` WHERE `User`.`email` = 'test@Nowports.com' AND `User`.`deleted_at` IS NULL LIMIT 1;",
+  parameters: {}
+}
+[2022-05-22T18:53:21.001] [WARN] {user/controller} - User: data required
+[2022-05-22T18:54:48.410] [WARN] {user/controller} - User: data required
+[2022-05-22T18:56:08.463] [WARN] {user/controller} - User: data required
+[2022-05-22T18:56:27.299] [INFO] index startup - Express server listening on port  3001
+[2022-05-22T18:56:33.771] [WARN] {user/controller} - User: data required
+[2022-05-22T18:58:00.725] [WARN] {user/controller} - User: data required
+[2022-05-22T19:00:20.089] [INFO] index startup - Express server listening on port  3001
+[2022-05-22T19:00:32.505] [WARN] {user/controller} - User: data required
+[2022-05-22T19:01:21.245] [INFO] index startup - Express server listening on port  3001
+[2022-05-22T19:01:27.887] [WARN] {user/controller} - User: data required
+[2022-05-22T19:02:11.772] [INFO] index startup - Express server listening on port  3001
+[2022-05-22T19:02:28.030] [WARN] {user/controller} - User: data required
+[2022-05-22T19:04:40.467] [ERROR] {errors} - SyntaxError: Unexpected token } in JSON at position 89
+    at JSON.parse (<anonymous>)
+    at parse (/usr/src/app/node_modules/body-parser/lib/types/json.js:89:19)
+    at /usr/src/app/node_modules/body-parser/lib/read.js:128:18
+    at AsyncResource.runInAsyncScope (node:async_hooks:202:9)
+    at invokeCallback (/usr/src/app/node_modules/raw-body/index.js:231:16)
+    at done (/usr/src/app/node_modules/raw-body/index.js:220:7)
+    at IncomingMessage.onEnd (/usr/src/app/node_modules/raw-body/index.js:280:7)
+    at IncomingMessage.emit (node:events:539:35)
+    at endReadableNT (node:internal/streams/readable:1345:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21) {
+  expose: true,
+  statusCode: 400,
+  status: 400,
+  body: '{\n' +
+    '    "name": "Andrés",\n' +
+    '    "lastName": "Huelmo",\n' +
+    '    "email": "huelmoandres@gmail.com",\n' +
+    '}',
+  type: 'entity.parse.failed'
+}
+[2022-05-22T19:04:45.218] [ERROR] {errors} - ValidationError [SequelizeValidationError]: notNull Violation: User.password cannot be null
+    at InstanceValidator._validate (/usr/src/app/node_modules/sequelize/lib/instance-validator.js:50:13)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async InstanceValidator._validateAndRunHooks (/usr/src/app/node_modules/sequelize/lib/instance-validator.js:60:7)
+    at async InstanceValidator.validate (/usr/src/app/node_modules/sequelize/lib/instance-validator.js:54:12)
+    at async model.save (/usr/src/app/node_modules/sequelize/lib/model.js:2360:7)
+    at async Function.create (/usr/src/app/node_modules/sequelize/lib/model.js:1336:12)
+    at async Object.create (/usr/src/app/src/api/components/user/controller.js:40:4) {
+  errors: [
+    ValidationErrorItem {
+      message: 'User.password cannot be null',
+      type: 'notNull Violation',
+      path: 'password',
+      value: null,
+      origin: 'CORE',
+      instance: [User],
+      validatorKey: 'is_null',
+      validatorName: null,
+      validatorArgs: []
+    }
+  ]
+}
+[2022-05-22T19:06:33.552] [INFO] index startup - Express server listening on port  3001
+[2022-05-22T19:06:36.949] [WARN] {user/controller} - User: data required
+[2022-05-22T19:06:53.791] [WARN] {user/controller} - User: data required
+[2022-05-22T19:06:58.784] [WARN] {user/controller} - User: data required
+[2022-05-22T19:07:03.548] [ERROR] {errors} - Error
+    at Query.run (/usr/src/app/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /usr/src/app/node_modules/sequelize/lib/sequelize.js:310:28
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async MySQLQueryInterface.insert (/usr/src/app/node_modules/sequelize/lib/dialects/abstract/query-interface.js:297:21)
+    at async model.save (/usr/src/app/node_modules/sequelize/lib/model.js:2424:35)
+    at async Function.create (/usr/src/app/node_modules/sequelize/lib/model.js:1336:12)
+    at async Object.create (/usr/src/app/src/api/components/user/controller.js:40:4) {
+  name: 'SequelizeUniqueConstraintError',
+  errors: [
+    ValidationErrorItem {
+      message: 'email must be unique',
+      type: 'unique violation',
+      path: 'email',
+      value: 'huelmoandres@gmail.com',
+      origin: 'DB',
+      instance: [User],
+      validatorKey: 'not_unique',
+      validatorName: null,
+      validatorArgs: []
+    }
+  ],
+  parent: Error: Duplicate entry 'huelmoandres@gmail.com' for key 'users.email'
+      at Packet.asError (/usr/src/app/node_modules/mysql2/lib/packets/packet.js:728:17)
+      at Execute.execute (/usr/src/app/node_modules/mysql2/lib/commands/command.js:29:26)
+      at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/connection.js:456:32)
+      at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/connection.js:85:12)
+      at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+      at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/connection.js:92:25)
+      at Socket.emit (node:events:527:28)
+      at addChunk (node:internal/streams/readable:315:12)
+      at readableAddChunk (node:internal/streams/readable:289:9)
+      at Socket.Readable.push (node:internal/streams/readable:228:10) {
+    code: 'ER_DUP_ENTRY',
+    errno: 1062,
+    sqlState: '23000',
+    sqlMessage: "Duplicate entry 'huelmoandres@gmail.com' for key 'users.email'",
+    sql: 'INSERT INTO `users` (`id`,`name`,`last_name`,`email`,`password`,`created_at`,`updated_at`) VALUES (DEFAULT,?,?,?,?,?,?);',
+    parameters: [
+      'Andrés',
+      'Huelmo',
+      'huelmoandres@gmail.com',
+      '$2b$10$iRZp3Wlw8y7kgFbzp1Mn4ODFBHtvmsgXcfqOk60iM0K2W1JXUqzWe',
+      '2022-05-22 19:07:03',
+      '2022-05-22 19:07:03'
+    ]
+  },
+  original: Error: Duplicate entry 'huelmoandres@gmail.com' for key 'users.email'
+      at Packet.asError (/usr/src/app/node_modules/mysql2/lib/packets/packet.js:728:17)
+      at Execute.execute (/usr/src/app/node_modules/mysql2/lib/commands/command.js:29:26)
+      at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/connection.js:456:32)
+      at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/connection.js:85:12)
+      at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+      at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/connection.js:92:25)
+      at Socket.emit (node:events:527:28)
+      at addChunk (node:internal/streams/readable:315:12)
+      at readableAddChunk (node:internal/streams/readable:289:9)
+      at Socket.Readable.push (node:internal/streams/readable:228:10) {
+    code: 'ER_DUP_ENTRY',
+    errno: 1062,
+    sqlState: '23000',
+    sqlMessage: "Duplicate entry 'huelmoandres@gmail.com' for key 'users.email'",
+    sql: 'INSERT INTO `users` (`id`,`name`,`last_name`,`email`,`password`,`created_at`,`updated_at`) VALUES (DEFAULT,?,?,?,?,?,?);',
+    parameters: [
+      'Andrés',
+      'Huelmo',
+      'huelmoandres@gmail.com',
+      '$2b$10$iRZp3Wlw8y7kgFbzp1Mn4ODFBHtvmsgXcfqOk60iM0K2W1JXUqzWe',
+      '2022-05-22 19:07:03',
+      '2022-05-22 19:07:03'
+    ]
+  },
+  fields: { email: 'huelmoandres@gmail.com' },
+  sql: 'INSERT INTO `users` (`id`,`name`,`last_name`,`email`,`password`,`created_at`,`updated_at`) VALUES (DEFAULT,?,?,?,?,?,?);'
+}
+[2022-05-22T19:11:46.310] [INFO] index startup - Express server listening on port  3001
+[2022-05-22T19:11:51.882] [WARN] {user/controller} - User: user already exists
+[2022-05-22T19:22:25.569] [INFO] index startup - Express server listening on port  3001
+[2022-05-23T22:25:56.868] [INFO] index startup - Express server listening on port  3001
+[2022-05-23T23:07:59.922] [INFO] index startup - Express server listening on port  3001
+[2022-05-23T23:10:40.306] [WARN] {user/controller} - Auth: token required.
+[2022-05-23T23:10:47.725] [ERROR] {errors} - ReferenceError: getUserByEmail is not defined
+    at module.exports (/usr/src/app/src/api/components/contacts/controller.js:52:3)
+    at create (/usr/src/app/src/api/components/contacts/network.js:14:5)
+    at Layer.handle [as handle_request] (/usr/src/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/usr/src/app/node_modules/express/lib/router/route.js:144:13)
+    at Route.dispatch (/usr/src/app/node_modules/express/lib/router/route.js:114:3)
+    at Layer.handle [as handle_request] (/usr/src/app/node_modules/express/lib/router/layer.js:95:5)
+    at /usr/src/app/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/usr/src/app/node_modules/express/lib/router/index.js:346:12)
+    at next (/usr/src/app/node_modules/express/lib/router/index.js:280:10)
+    at /usr/src/app/src/api/components/auth/secure.js:16:21
+[2022-05-23T23:11:47.110] [INFO] index startup - Express server listening on port  3001
+[2022-05-23T23:11:53.864] [WARN] {user/controller} - Contact: data required
+[2022-05-23T23:12:53.251] [ERROR] {errors} - SyntaxError: Unexpected string in JSON at position 107
+    at JSON.parse (<anonymous>)
+    at parse (/usr/src/app/node_modules/body-parser/lib/types/json.js:89:19)
+    at /usr/src/app/node_modules/body-parser/lib/read.js:128:18
+    at AsyncResource.runInAsyncScope (node:async_hooks:202:9)
+    at invokeCallback (/usr/src/app/node_modules/raw-body/index.js:231:16)
+    at done (/usr/src/app/node_modules/raw-body/index.js:220:7)
+    at IncomingMessage.onEnd (/usr/src/app/node_modules/raw-body/index.js:280:7)
+    at IncomingMessage.emit (node:events:539:35)
+    at endReadableNT (node:internal/streams/readable:1345:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21) {
+  expose: true,
+  statusCode: 400,
+  status: 400,
+  body: '{\n' +
+    '    "firstName": "Andrés",\n' +
+    '    "lastName": "Huelmo",\n' +
+    '    "userId": "22",\n' +
+    '    "phone": "+59891383578"\n' +
+    '    "addresses": "asdas"\n' +
+    '}',
+  type: 'entity.parse.failed'
+}
+[2022-05-23T23:13:28.389] [WARN] {user/controller} - Contact: data required
+[2022-05-23T23:13:52.180] [WARN] {user/controller} - Contact: data required
+[2022-05-23T23:14:04.608] [WARN] {user/controller} - Contact: data required
+[2022-05-23T23:14:08.395] [INFO] index startup - Express server listening on port  3001
+[2022-05-23T23:14:14.357] [WARN] {user/controller} - User: user not found
+[2022-05-23T23:14:21.798] [ERROR] {errors} - ValidationError [SequelizeValidationError]: notNull Violation: Contact.address cannot be null
+    at InstanceValidator._validate (/usr/src/app/node_modules/sequelize/lib/instance-validator.js:50:13)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async InstanceValidator._validateAndRunHooks (/usr/src/app/node_modules/sequelize/lib/instance-validator.js:60:7)
+    at async InstanceValidator.validate (/usr/src/app/node_modules/sequelize/lib/instance-validator.js:54:12)
+    at async model.save (/usr/src/app/node_modules/sequelize/lib/model.js:2360:7)
+    at async /usr/src/app/node_modules/sequelize/lib/model.js:2475:13
+    at async Promise.all (index 0)
+    at async /usr/src/app/node_modules/sequelize/lib/model.js:2456:9
+    at async Promise.all (index 0)
+    at async model.save (/usr/src/app/node_modules/sequelize/lib/model.js:2445:7) {
+  errors: [
+    ValidationErrorItem {
+      message: 'Contact.address cannot be null',
+      type: 'notNull Violation',
+      path: 'address',
+      value: null,
+      origin: 'CORE',
+      instance: [Contact],
+      validatorKey: 'is_null',
+      validatorName: null,
+      validatorArgs: []
+    }
+  ]
+}
+[2022-05-23T23:15:33.804] [ERROR] {errors} - Error
+    at Query.run (/usr/src/app/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /usr/src/app/node_modules/sequelize/lib/sequelize.js:310:28
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async MySQLQueryInterface.insert (/usr/src/app/node_modules/sequelize/lib/dialects/abstract/query-interface.js:297:21)
+    at async model.save (/usr/src/app/node_modules/sequelize/lib/model.js:2424:35)
+    at async /usr/src/app/node_modules/sequelize/lib/model.js:2475:13
+    at async Promise.all (index 0)
+    at async /usr/src/app/node_modules/sequelize/lib/model.js:2456:9
+    at async Promise.all (index 0)
+    at async model.save (/usr/src/app/node_modules/sequelize/lib/model.js:2445:7) {
+  name: 'SequelizeDatabaseError',
+  parent: Error: Unknown column 'address' in 'field list'
+      at Packet.asError (/usr/src/app/node_modules/mysql2/lib/packets/packet.js:728:17)
+      at Prepare.execute (/usr/src/app/node_modules/mysql2/lib/commands/command.js:29:26)
+      at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/connection.js:456:32)
+      at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/connection.js:85:12)
+      at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+      at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/connection.js:92:25)
+      at Socket.emit (node:events:527:28)
+      at addChunk (node:internal/streams/readable:315:12)
+      at readableAddChunk (node:internal/streams/readable:289:9)
+      at Socket.Readable.push (node:internal/streams/readable:228:10) {
+    code: 'ER_BAD_FIELD_ERROR',
+    errno: 1054,
+    sqlState: '42S22',
+    sqlMessage: "Unknown column 'address' in 'field list'",
+    sql: 'INSERT INTO `contacts` (`id`,`address`,`created_at`,`updated_at`,`contact_id`) VALUES (DEFAULT,?,?,?,?);',
+    parameters: [ 'Dirección 1', '2022-05-23 23:15:33', '2022-05-23 23:15:33', 2 ]
+  },
+  original: Error: Unknown column 'address' in 'field list'
+      at Packet.asError (/usr/src/app/node_modules/mysql2/lib/packets/packet.js:728:17)
+      at Prepare.execute (/usr/src/app/node_modules/mysql2/lib/commands/command.js:29:26)
+      at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/connection.js:456:32)
+      at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/connection.js:85:12)
+      at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+      at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/connection.js:92:25)
+      at Socket.emit (node:events:527:28)
+      at addChunk (node:internal/streams/readable:315:12)
+      at readableAddChunk (node:internal/streams/readable:289:9)
+      at Socket.Readable.push (node:internal/streams/readable:228:10) {
+    code: 'ER_BAD_FIELD_ERROR',
+    errno: 1054,
+    sqlState: '42S22',
+    sqlMessage: "Unknown column 'address' in 'field list'",
+    sql: 'INSERT INTO `contacts` (`id`,`address`,`created_at`,`updated_at`,`contact_id`) VALUES (DEFAULT,?,?,?,?);',
+    parameters: [ 'Dirección 1', '2022-05-23 23:15:33', '2022-05-23 23:15:33', 2 ]
+  },
+  sql: 'INSERT INTO `contacts` (`id`,`address`,`created_at`,`updated_at`,`contact_id`) VALUES (DEFAULT,?,?,?,?);',
+  parameters: [ 'Dirección 1', '2022-05-23 23:15:33', '2022-05-23 23:15:33', 2 ]
+}
+[2022-05-23T23:17:03.282] [INFO] index startup - Express server listening on port  3001
+[2022-05-23T23:21:49.251] [WARN] {user/controller} - User: user already exists
+[2022-05-23T23:23:53.177] [INFO] index startup - Express server listening on port  3001
+[2022-05-23T23:24:05.385] [ERROR] {errors} - EagerLoadingError [SequelizeEagerLoadingError]: Contact is associated to Contact using an alias. You've included an alias (addressess), but it does not match the alias(es) defined in your association (addresses).
+    at Function._getIncludedAssociation (/usr/src/app/node_modules/sequelize/lib/model.js:574:15)
+    at Function._validateIncludedElement (/usr/src/app/node_modules/sequelize/lib/model.js:502:53)
+    at /usr/src/app/node_modules/sequelize/lib/model.js:421:37
+    at Array.map (<anonymous>)
+    at Function._validateIncludedElements (/usr/src/app/node_modules/sequelize/lib/model.js:417:39)
+    at new Model (/usr/src/app/node_modules/sequelize/lib/model.js:107:26)
+    at new Contact (/usr/src/app/node_modules/sequelize/lib/sequelize.js:218:19)
+    at Function.build (/usr/src/app/node_modules/sequelize/lib/model.js:1318:12)
+    at Function.create (/usr/src/app/node_modules/sequelize/lib/model.js:1336:23)
+    at Object.create (/usr/src/app/src/api/components/contacts/controller.js:26:18)
+[2022-05-23T23:27:51.071] [INFO] index startup - Express server listening on port  3001
+[2022-05-23T23:30:06.590] [INFO] index startup - Express server listening on port  3001
+[2022-05-23T23:43:40.349] [INFO] index startup - Express server listening on port  3001
+[2022-05-24T00:16:55.348] [INFO] index startup - Express server listening on port  3001
+[2022-05-24T00:16:59.648] [INFO] index startup - Express server listening on port  3001
+[2022-05-24T00:17:02.958] [INFO] index startup - Express server listening on port  3001
+[2022-05-24T00:17:06.553] [INFO] index startup - Express server listening on port  3001
+[2022-05-24T00:17:10.624] [INFO] index startup - Express server listening on port  3001
+[2022-05-24T00:17:15.310] [INFO] index startup - Express server listening on port  3001
+[2022-05-24T00:17:21.782] [INFO] index startup - Express server listening on port  3001
+[2022-05-24T00:17:31.159] [INFO] index startup - Express server listening on port  3001
+[2022-05-24T00:17:47.329] [INFO] index startup - Express server listening on port  3001
+[2022-05-24T00:18:16.274] [INFO] index startup - Express server listening on port  3001
+[2022-05-24T00:19:12.849] [INFO] index startup - Express server listening on port  3001
+[2022-05-24T00:19:14.486] [INFO] index startup - Express server listening on port  3001
+[2022-05-24T00:19:16.275] [INFO] index startup - Express server listening on port  3001
+[2022-05-24T00:19:18.136] [INFO] index startup - Express server listening on port  3001
+[2022-05-24T00:19:20.532] [INFO] index startup - Express server listening on port  3001
+[2022-05-24T00:19:23.590] [INFO] index startup - Express server listening on port  3001
+[2022-05-24T00:19:28.305] [INFO] index startup - Express server listening on port  3001
+[2022-05-24T00:19:36.328] [INFO] index startup - Express server listening on port  3001
+[2022-05-24T00:19:50.846] [INFO] index startup - Express server listening on port  3001
+[2022-05-24T00:20:18.094] [INFO] index startup - Express server listening on port  3001
+[2022-05-24T00:20:56.419] [INFO] index startup - Express server listening on port  3001
+[2022-05-24T00:20:59.861] [INFO] index startup - Express server listening on port  3001
+[2022-05-24T00:21:02.268] [INFO] index startup - Express server listening on port  3001
+[2022-05-24T00:21:05.260] [INFO] index startup - Express server listening on port  3001
+[2022-05-24T00:21:08.304] [INFO] index startup - Express server listening on port  3001
+[2022-05-24T00:21:12.248] [INFO] index startup - Express server listening on port  3001
+[2022-05-24T00:21:19.007] [INFO] index startup - Express server listening on port  3001
+[2022-05-24T00:21:27.820] [INFO] index startup - Express server listening on port  3001
+[2022-05-24T00:21:43.263] [INFO] index startup - Express server listening on port  3001
+[2022-05-24T00:22:11.237] [INFO] index startup - Express server listening on port  3001
+[2022-05-24T00:22:22.189] [INFO] index startup - Express server listening on port  3001
+[2022-05-24T00:22:24.773] [INFO] index startup - Express server listening on port  3001
+[2022-05-24T00:22:27.579] [INFO] index startup - Express server listening on port  3001
+[2022-05-24T00:22:30.467] [INFO] index startup - Express server listening on port  3001
+[2022-05-24T00:22:33.655] [INFO] index startup - Express server listening on port  3001
+[2022-05-24T00:22:37.790] [INFO] index startup - Express server listening on port  3001
+[2022-05-24T00:22:44.712] [INFO] index startup - Express server listening on port  3001
+[2022-05-24T00:22:53.657] [INFO] index startup - Express server listening on port  3001
+[2022-05-24T00:23:12.487] [INFO] index startup - Express server listening on port  3001
+[2022-05-24T00:23:15.372] [INFO] index startup - Express server listening on port  3001
+[2022-05-24T00:23:18.029] [INFO] index startup - Express server listening on port  3001
+[2022-05-24T00:23:20.884] [INFO] index startup - Express server listening on port  3001
+[2022-05-24T00:23:24.116] [INFO] index startup - Express server listening on port  3001
+[2022-05-24T00:23:29.380] [INFO] index startup - Express server listening on port  3001
+[2022-05-24T00:23:34.877] [INFO] index startup - Express server listening on port  3001
+[2022-05-24T00:23:44.461] [INFO] index startup - Express server listening on port  3001
+[2022-05-24T00:23:59.957] [INFO] index startup - Express server listening on port  3001
+[2022-05-24T00:24:28.003] [INFO] index startup - Express server listening on port  3001
+[2022-05-24T00:25:21.316] [INFO] index startup - Express server listening on port  3001
+[2022-05-24T00:26:24.840] [INFO] index startup - Express server listening on port  3001
+[2022-05-24T00:27:26.942] [INFO] index startup - Express server listening on port  3001
+[2022-05-24T12:57:21.004] [INFO] index startup - Express server listening on port  3001
+[2022-05-31T21:17:21.656] [INFO] index startup - Express server listening on port  3001
+[2022-05-31T22:59:54.917] [INFO] index startup - Express server listening on port  3001
+[2022-05-31T22:59:59.928] [ERROR] {auth/controller} - Password not match
+[2022-05-31T23:02:52.524] [ERROR] {auth/controller} - Password not match
+[2022-05-31T23:55:19.706] [ERROR] {auth/controller} - Password not match
+[2022-05-31T23:58:42.114] [INFO] index startup - Express server listening on port  3001
+[2022-06-01T00:03:39.658] [INFO] index startup - Express server listening on port  3001
+[2022-06-01T00:04:12.636] [ERROR] {auth/controller} - Password not match
+[2022-06-01T11:59:08.832] [INFO] index startup - Express server listening on port  3001
+[2022-06-01T12:00:16.957] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T12:39:18.543] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T13:12:21.660] [ERROR] {auth/controller} - Password not match
+[2022-06-01T13:19:17.450] [ERROR] {auth/controller} - Password not match
+[2022-06-01T13:19:33.055] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T13:19:34.082] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T13:19:36.094] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T13:23:03.925] [ERROR] {auth/controller} - Password not match
+[2022-06-01T13:23:07.712] [ERROR] {auth/controller} - Password not match
+[2022-06-01T13:23:17.143] [ERROR] {auth/controller} - Password not match
+[2022-06-01T13:25:14.838] [ERROR] {auth/controller} - Password not match
+[2022-06-01T13:25:18.845] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T13:25:19.864] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T13:25:21.882] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T13:26:23.869] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T13:26:24.885] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T13:26:26.901] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T13:27:02.188] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T13:27:03.209] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T13:30:59.438] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T13:31:28.020] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T13:31:29.040] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T13:31:31.037] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T13:34:26.638] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T13:34:27.661] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T13:34:29.657] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T13:35:08.947] [ERROR] {auth/controller} - Password not match
+[2022-06-01T13:35:15.546] [ERROR] {auth/controller} - Password not match
+[2022-06-01T13:35:22.559] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T13:35:23.579] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T13:35:25.597] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T13:36:58.678] [ERROR] {auth/controller} - Password not match
+[2022-06-01T13:37:02.666] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T13:37:03.690] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T13:37:05.708] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T14:20:42.981] [ERROR] {auth/controller} - Password not match
+[2022-06-01T15:29:10.145] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T15:35:16.092] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T15:35:20.673] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T15:36:09.570] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T15:37:08.953] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T15:37:15.240] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T15:37:22.205] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T15:37:28.471] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T15:37:33.246] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T15:38:32.047] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T15:38:40.770] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T15:38:42.282] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T15:38:45.464] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T15:39:26.041] [ERROR] {auth/controller} - Password not match
+[2022-06-01T15:39:37.926] [ERROR] {auth/controller} - Password not match
+[2022-06-01T15:41:00.088] [ERROR] {auth/controller} - Password not match
+[2022-06-01T15:41:47.188] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T15:41:57.092] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T15:42:05.677] [ERROR] {auth/controller} - Password not match
+[2022-06-01T15:42:31.786] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T15:42:45.180] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T15:43:06.284] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T15:43:10.655] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T15:43:19.645] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T15:43:53.153] [ERROR] {auth/controller} - Password not match
+[2022-06-01T15:50:30.948] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T15:50:37.354] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T15:51:20.228] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T15:51:26.460] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T15:51:34.537] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T15:55:04.052] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T15:55:14.338] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T15:55:19.382] [ERROR] {auth/controller} - Password not match
+[2022-06-01T15:55:28.622] [ERROR] {auth/controller} - Password not match
+[2022-06-01T15:55:33.839] [ERROR] {auth/controller} - Password not match
+[2022-06-01T19:28:48.674] [INFO] index startup - Express server listening on port  3001
+[2022-06-01T19:32:57.105] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T19:51:19.601] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T19:52:37.226] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T19:53:49.938] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T19:54:55.333] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T19:56:44.749] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T19:58:54.974] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T19:59:44.067] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T20:00:02.905] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T20:00:12.811] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T20:01:14.814] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T20:01:29.703] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T20:02:06.706] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T20:02:32.792] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T20:02:39.684] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T20:03:10.704] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T20:03:25.695] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T20:05:31.213] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T20:05:32.817] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T20:05:51.439] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T20:06:49.402] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T20:07:06.970] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T20:08:12.548] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T20:08:25.731] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T20:09:09.917] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T20:09:12.537] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T20:09:14.797] [INFO] index startup - Express server listening on port  3001
+[2022-06-01T20:09:15.463] [WARN] {user/controller} - User: user already exists
+[2022-06-01T20:11:52.790] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T20:12:30.904] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T20:13:26.033] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T20:14:42.968] [WARN] {user/controller} - User: user already exists
+[2022-06-01T20:14:49.740] [WARN] {user/controller} - User: user already exists
+[2022-06-01T20:14:53.672] [WARN] {user/controller} - User: user already exists
+[2022-06-01T20:14:58.267] [WARN] {user/controller} - User: user already exists
+[2022-06-01T20:15:07.731] [WARN] {user/controller} - User: user already exists
+[2022-06-01T20:15:11.965] [WARN] {user/controller} - User: user already exists
+[2022-06-01T20:16:26.116] [ERROR] {auth/controller} - Password not match
+[2022-06-01T21:36:29.940] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T22:44:14.877] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T23:41:09.600] [WARN] {user/controller} - Auth: token required.
+[2022-06-01T23:41:17.979] [WARN] {user/controller} - Auth: token required.
+[2022-06-02T00:36:37.018] [WARN] {user/controller} - Auth: token required.
+[2022-06-02T00:59:03.211] [WARN] {user/controller} - Contact: data required
+[2022-06-02T00:59:59.201] [WARN] {user/controller} - Contact: data required
+[2022-06-02T01:52:58.650] [WARN] {user/controller} - Auth: token required.
+[2022-06-02T11:56:39.499] [WARN] {user/controller} - Auth: token required.
+[2022-06-02T11:58:48.979] [WARN] {user/controller} - Auth: token required.
+[2022-06-02T12:01:02.393] [INFO] index startup - Express server listening on port  3001
+[2022-06-02T12:01:04.150] [WARN] {user/controller} - Contact: contact not found.
+[2022-06-02T12:01:09.009] [WARN] {user/controller} - Contact: contact not found.
+[2022-06-02T12:01:12.120] [WARN] {user/controller} - Contact: contact not found.
+[2022-06-02T12:01:16.327] [WARN] {user/controller} - Contact: contact not found.
+[2022-06-02T12:01:23.914] [WARN] {user/controller} - Contact: contact not found.
+[2022-06-02T12:01:28.890] [WARN] {user/controller} - Contact: contact not found.
+[2022-06-02T12:01:32.584] [WARN] {user/controller} - Contact: contact not found.
+[2022-06-02T12:01:37.448] [WARN] {user/controller} - Contact: contact not found.
+[2022-06-02T12:22:24.684] [WARN] {user/controller} - Auth: token required.
+[2022-06-02T12:24:45.652] [WARN] {user/controller} - Auth: token required.
+[2022-06-02T12:24:45.662] [WARN] {user/controller} - Auth: token required.
+[2022-06-02T12:25:09.756] [WARN] {user/controller} - Auth: token required.
+[2022-06-02T12:25:09.764] [WARN] {user/controller} - Auth: token required.
+[2022-06-02T12:25:25.854] [WARN] {user/controller} - Auth: token required.
+[2022-06-02T12:25:31.008] [WARN] {user/controller} - Auth: token required.
+[2022-06-02T12:25:47.069] [ERROR] {errors} - Error
+    at Query.run (/usr/src/app/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /usr/src/app/node_modules/sequelize/lib/sequelize.js:310:28
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async MySQLQueryInterface.delete (/usr/src/app/node_modules/sequelize/lib/dialects/abstract/query-interface.js:382:12)
+    at async model.destroy (/usr/src/app/node_modules/sequelize/lib/model.js:2549:16)
+    at async Object.deleteContact (/usr/src/app/src/api/components/contacts/controller.js:100:3) {
+  name: 'SequelizeForeignKeyConstraintError',
+  parent: Error: Cannot delete or update a parent row: a foreign key constraint fails (`db_nowports`.`addresses`, CONSTRAINT `addresses_ibfk_1` FOREIGN KEY (`contact_id`) REFERENCES `contacts` (`id`))
+      at Packet.asError (/usr/src/app/node_modules/mysql2/lib/packets/packet.js:728:17)
+      at Query.execute (/usr/src/app/node_modules/mysql2/lib/commands/command.js:29:26)
+      at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/connection.js:456:32)
+      at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/connection.js:85:12)
+      at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+      at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/connection.js:92:25)
+      at Socket.emit (node:events:527:28)
+      at addChunk (node:internal/streams/readable:315:12)
+      at readableAddChunk (node:internal/streams/readable:289:9)
+      at Socket.Readable.push (node:internal/streams/readable:228:10) {
+    code: 'ER_ROW_IS_REFERENCED_2',
+    errno: 1451,
+    sqlState: '23000',
+    sqlMessage: 'Cannot delete or update a parent row: a foreign key constraint fails (`db_nowports`.`addresses`, CONSTRAINT `addresses_ibfk_1` FOREIGN KEY (`contact_id`) REFERENCES `contacts` (`id`))',
+    sql: 'DELETE FROM `contacts` WHERE `id` = 6',
+    parameters: undefined
+  },
+  original: Error: Cannot delete or update a parent row: a foreign key constraint fails (`db_nowports`.`addresses`, CONSTRAINT `addresses_ibfk_1` FOREIGN KEY (`contact_id`) REFERENCES `contacts` (`id`))
+      at Packet.asError (/usr/src/app/node_modules/mysql2/lib/packets/packet.js:728:17)
+      at Query.execute (/usr/src/app/node_modules/mysql2/lib/commands/command.js:29:26)
+      at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/connection.js:456:32)
+      at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/connection.js:85:12)
+      at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+      at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/connection.js:92:25)
+      at Socket.emit (node:events:527:28)
+      at addChunk (node:internal/streams/readable:315:12)
+      at readableAddChunk (node:internal/streams/readable:289:9)
+      at Socket.Readable.push (node:internal/streams/readable:228:10) {
+    code: 'ER_ROW_IS_REFERENCED_2',
+    errno: 1451,
+    sqlState: '23000',
+    sqlMessage: 'Cannot delete or update a parent row: a foreign key constraint fails (`db_nowports`.`addresses`, CONSTRAINT `addresses_ibfk_1` FOREIGN KEY (`contact_id`) REFERENCES `contacts` (`id`))',
+    sql: 'DELETE FROM `contacts` WHERE `id` = 6',
+    parameters: undefined
+  },
+  sql: 'DELETE FROM `contacts` WHERE `id` = 6',
+  parameters: {},
+  table: 'contacts',
+  fields: [ 'contact_id' ],
+  value: undefined,
+  index: 'addresses_ibfk_1',
+  reltype: 'parent'
+}
+[2022-06-02T12:25:59.432] [ERROR] {errors} - Error
+    at Query.run (/usr/src/app/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /usr/src/app/node_modules/sequelize/lib/sequelize.js:310:28
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async MySQLQueryInterface.delete (/usr/src/app/node_modules/sequelize/lib/dialects/abstract/query-interface.js:382:12)
+    at async model.destroy (/usr/src/app/node_modules/sequelize/lib/model.js:2549:16)
+    at async Object.deleteContact (/usr/src/app/src/api/components/contacts/controller.js:100:3) {
+  name: 'SequelizeForeignKeyConstraintError',
+  parent: Error: Cannot delete or update a parent row: a foreign key constraint fails (`db_nowports`.`addresses`, CONSTRAINT `addresses_ibfk_1` FOREIGN KEY (`contact_id`) REFERENCES `contacts` (`id`))
+      at Packet.asError (/usr/src/app/node_modules/mysql2/lib/packets/packet.js:728:17)
+      at Query.execute (/usr/src/app/node_modules/mysql2/lib/commands/command.js:29:26)
+      at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/connection.js:456:32)
+      at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/connection.js:85:12)
+      at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+      at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/connection.js:92:25)
+      at Socket.emit (node:events:527:28)
+      at addChunk (node:internal/streams/readable:315:12)
+      at readableAddChunk (node:internal/streams/readable:289:9)
+      at Socket.Readable.push (node:internal/streams/readable:228:10) {
+    code: 'ER_ROW_IS_REFERENCED_2',
+    errno: 1451,
+    sqlState: '23000',
+    sqlMessage: 'Cannot delete or update a parent row: a foreign key constraint fails (`db_nowports`.`addresses`, CONSTRAINT `addresses_ibfk_1` FOREIGN KEY (`contact_id`) REFERENCES `contacts` (`id`))',
+    sql: 'DELETE FROM `contacts` WHERE `id` = 6',
+    parameters: undefined
+  },
+  original: Error: Cannot delete or update a parent row: a foreign key constraint fails (`db_nowports`.`addresses`, CONSTRAINT `addresses_ibfk_1` FOREIGN KEY (`contact_id`) REFERENCES `contacts` (`id`))
+      at Packet.asError (/usr/src/app/node_modules/mysql2/lib/packets/packet.js:728:17)
+      at Query.execute (/usr/src/app/node_modules/mysql2/lib/commands/command.js:29:26)
+      at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/connection.js:456:32)
+      at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/connection.js:85:12)
+      at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+      at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/connection.js:92:25)
+      at Socket.emit (node:events:527:28)
+      at addChunk (node:internal/streams/readable:315:12)
+      at readableAddChunk (node:internal/streams/readable:289:9)
+      at Socket.Readable.push (node:internal/streams/readable:228:10) {
+    code: 'ER_ROW_IS_REFERENCED_2',
+    errno: 1451,
+    sqlState: '23000',
+    sqlMessage: 'Cannot delete or update a parent row: a foreign key constraint fails (`db_nowports`.`addresses`, CONSTRAINT `addresses_ibfk_1` FOREIGN KEY (`contact_id`) REFERENCES `contacts` (`id`))',
+    sql: 'DELETE FROM `contacts` WHERE `id` = 6',
+    parameters: undefined
+  },
+  sql: 'DELETE FROM `contacts` WHERE `id` = 6',
+  parameters: {},
+  table: 'contacts',
+  fields: [ 'contact_id' ],
+  value: undefined,
+  index: 'addresses_ibfk_1',
+  reltype: 'parent'
+}
+[2022-06-02T12:33:37.278] [INFO] index startup - Express server listening on port  3001
+[2022-06-02T12:33:41.510] [WARN] {user/controller} - Auth: token required.
+[2022-06-02T12:33:47.897] [ERROR] {errors} - Error
+    at Query.run (/usr/src/app/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /usr/src/app/node_modules/sequelize/lib/sequelize.js:310:28
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async MySQLQueryInterface.bulkUpdate (/usr/src/app/node_modules/sequelize/lib/dialects/abstract/query-interface.js:355:12)
+    at async Function.update (/usr/src/app/node_modules/sequelize/lib/model.js:1950:28)
+    at async Promise.all (index 0)
+    at async HasMany.set (/usr/src/app/node_modules/sequelize/lib/associations/has-many.js:254:5)
+    at async Object.deleteContact (/usr/src/app/src/api/components/contacts/controller.js:101:3) {
+  name: 'SequelizeDatabaseError',
+  parent: Error: Column 'contact_id' cannot be null
+      at Packet.asError (/usr/src/app/node_modules/mysql2/lib/packets/packet.js:728:17)
+      at Execute.execute (/usr/src/app/node_modules/mysql2/lib/commands/command.js:29:26)
+      at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/connection.js:456:32)
+      at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/connection.js:85:12)
+      at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+      at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/connection.js:92:25)
+      at Socket.emit (node:events:527:28)
+      at addChunk (node:internal/streams/readable:315:12)
+      at readableAddChunk (node:internal/streams/readable:289:9)
+      at Socket.Readable.push (node:internal/streams/readable:228:10) {
+    code: 'ER_BAD_NULL_ERROR',
+    errno: 1048,
+    sqlState: '23000',
+    sqlMessage: "Column 'contact_id' cannot be null",
+    sql: 'UPDATE `addresses` SET `contact_id`=?,`updated_at`=? WHERE `id` IN (7, 8)',
+    parameters: [ null, '2022-06-02 12:33:47' ]
+  },
+  original: Error: Column 'contact_id' cannot be null
+      at Packet.asError (/usr/src/app/node_modules/mysql2/lib/packets/packet.js:728:17)
+      at Execute.execute (/usr/src/app/node_modules/mysql2/lib/commands/command.js:29:26)
+      at Connection.handlePacket (/usr/src/app/node_modules/mysql2/lib/connection.js:456:32)
+      at PacketParser.onPacket (/usr/src/app/node_modules/mysql2/lib/connection.js:85:12)
+      at PacketParser.executeStart (/usr/src/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+      at Socket.<anonymous> (/usr/src/app/node_modules/mysql2/lib/connection.js:92:25)
+      at Socket.emit (node:events:527:28)
+      at addChunk (node:internal/streams/readable:315:12)
+      at readableAddChunk (node:internal/streams/readable:289:9)
+      at Socket.Readable.push (node:internal/streams/readable:228:10) {
+    code: 'ER_BAD_NULL_ERROR',
+    errno: 1048,
+    sqlState: '23000',
+    sqlMessage: "Column 'contact_id' cannot be null",
+    sql: 'UPDATE `addresses` SET `contact_id`=?,`updated_at`=? WHERE `id` IN (7, 8)',
+    parameters: [ null, '2022-06-02 12:33:47' ]
+  },
+  sql: 'UPDATE `addresses` SET `contact_id`=?,`updated_at`=? WHERE `id` IN (7, 8)',
+  parameters: [ null, '2022-06-02 12:33:47' ]
+}
+[2022-06-02T12:36:27.787] [INFO] index startup - Express server listening on port  3001
+[2022-06-02T12:36:43.832] [INFO] {user/controller} - Contact: 6 deleted correctly.
+[2022-06-02T12:37:02.728] [INFO] {user/controller} - Contact: 7 deleted correctly.
+[2022-06-02T12:37:05.887] [INFO] {user/controller} - Contact: 8 deleted correctly.
+[2022-06-02T12:37:08.692] [INFO] {user/controller} - Contact: 9 deleted correctly.
+[2022-06-02T12:37:10.559] [INFO] {user/controller} - Contact: 10 deleted correctly.
+[2022-06-02T12:37:12.332] [INFO] {user/controller} - Contact: 11 deleted correctly.
+[2022-06-02T12:37:13.962] [INFO] {user/controller} - Contact: 12 deleted correctly.
+[2022-06-02T12:40:50.607] [INFO] {user/controller} - Contact: 13 deleted correctly.
+[2022-06-02T12:41:18.247] [INFO] {user/controller} - Contact: 14 deleted correctly.
+[2022-06-02T12:51:23.837] [INFO] index startup - Express server listening on port  3001
+[2022-06-02T12:56:06.038] [INFO] index startup - Express server listening on port  3001
+[2022-06-02T12:58:50.814] [WARN] {user/controller} - Auth: token required.

@@ -14,3 +14,28 @@
 /nowports-api-ms/.idea
 /nowports-api-ms/node_modules
 /nowports-api-ms/.env
+
+# DOCKER NOWPORTS-APP
+/nowports-app/.idea
+/nowports-app/node_modules
+/nowports-app/.env
+
+/nowports-app/.pnp
+/nowports-app/.pnp.js
+
+# testing
+/nowports-app/coverage
+
+# production
+/nowports-app/build
+
+# misc
+/nowports-app/.DS_Store
+/nowports-app/.env.local
+/nowports-app/.env.development.local
+/nowports-app/.env.test.local
+/nowports-app/.env.production.local
+
+/nowports-app/npm-debug.log*
+/nowports-app/yarn-debug.log*
+/nowports-app/yarn-error.log*

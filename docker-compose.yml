@@ -6,26 +6,8 @@ version: "3.8"
 
 services:
 
-  nowports-api-ms:
-    build:
-      context: ${REPO_PATH}/nowports-api-ms
-      dockerfile: ${REPO_PATH}/docker-infra/nowports/docker/nowports-api-ms/Dockerfile
-    volumes:
-      - ${REPO_PATH}/nowports-api-ms/src:/usr/src/app/src
-      - ${REPO_PATH}/nowports-api-ms/.env:/usr/src/app/.env
-      - ${REPO_PATH}/nowports-api-ms/package.json:/usr/src/app/package.json
-      - ${REPO_PATH}/nowports-api-ms/package-lock.json:/usr/src/app/package-lock.json
-    stdin_open: true
-    restart: unless-stopped
-    tty: true
-    container_name: nowports-api-ms
-    ports:
-      - "3000:3000"
-    depends_on:
-      - mysql
-
-  mysql:
-    container_name: mysql
+  mysql-nowports:
+    container_name: mysql-nowports
     build:
       context: ${REPO_PATH}/docker-infra/mysql
       dockerfile: ${REPO_PATH}/docker-infra/mysql/docker/Dockerfile
@@ -40,5 +22,66 @@ services:
       MYSQL_USER: nowports
     volumes:
       - ${REPO_PATH}/docker-infra/mysql/data/var/lib/mysql:/var/lib/mysql
-      - ${REPO_PATH}/docker-infra/mysql/log:/var/log/mysql/
+      - ${REPO_PATH}/docker-infra/mysql/init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      nowports:
+        ipv4_address: 10.10.20.10
 
+  nowports-api-ms:
+    build:
+      context: ${REPO_PATH}/nowports-api-ms
+      dockerfile: ${REPO_PATH}/docker-infra/nowports/docker/nowports-api-ms/Dockerfile
+    volumes:
+      - ${REPO_PATH}/nowports-api-ms/src:/usr/src/app/src
+      - ${REPO_PATH}/nowports-api-ms/.env:/usr/src/app/.env
+      - ${REPO_PATH}/nowports-api-ms/package.json:/usr/src/app/package.json
+      - ${REPO_PATH}/nowports-api-ms/package-lock.json:/usr/src/app/package-lock.json
+      - ${REPO_PATH}/nowports-api-ms/.sequelizerc:/usr/src/app/.sequelizerc
+      - ${REPO_PATH}/nowports-api-ms/all:/usr/src/app/all
+      - ${REPO_PATH}/nowports-api-ms/log:/usr/src/app/log
+    stdin_open: true
+    restart: unless-stopped
+    tty: true
+    container_name: nowports-api-ms
+    ports:
+      - "3001:3001"
+    networks:
+      nowports:
+        ipv4_address: 10.10.20.11
+    depends_on:
+      - mysql-nowports
+
+  nowports-app:
+    build:
+      context: ${REPO_PATH}/nowports-app
+      dockerfile: ${REPO_PATH}/docker-infra/nowports/docker/nowports-app/Dockerfile
+    volumes:
+      - ${REPO_PATH}/nowports-app/src:/usr/src/app/src
+      - ${REPO_PATH}/nowports-app/.env:/usr/src/app/.env
+      - ${REPO_PATH}/nowports-app/package.json:/usr/src/app/package.json
+      - ${REPO_PATH}/nowports-app/package-lock.json:/usr/src/app/package-lock.json
+      - ${REPO_PATH}/nowports-app/tsconfig.json:/usr/src/app/tsconfig.json
+      - ${REPO_PATH}/nowports-app/public:/usr/src/app/public
+    stdin_open: true
+    command: npm run start
+    restart: unless-stopped
+    tty: true
+    container_name: nowports-app
+    ports:
+      - "3000:3000"
+    networks:
+      nowports:
+        ipv4_address: 10.10.20.12
+    depends_on:
+      - mysql-nowports
+      - nowports-api-ms
+
+networks:
+  nowports:
+    name: nowports
+    driver: bridge
+    enable_ipv6: false
+    ipam:
+      config:
+        - subnet: 10.10.20.0/24
+          gateway: 10.10.20.1
