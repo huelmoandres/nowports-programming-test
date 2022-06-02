@@ -14,6 +14,7 @@
 /nowports-api-ms/.idea
 /nowports-api-ms/node_modules
 /nowports-api-ms/.env
+/nowports-api-ms/log
 
 # DOCKER NOWPORTS-APP
 /nowports-app/.idea
