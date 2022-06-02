@@ -8,6 +8,12 @@ Estando ubicados en la carpeta del proyecto "nowports-programming-test" ejecutar
 
 Renombrar todos los archivos .env.example a .env y realizar su configuración, por defecto ya viene la configuración estandar.
 
+.env
+
+nowports-api-ms/.env.example
+
+nowports-app/.env.example
+
 ### `docker-compose up -d`
 
 Si lo desean pueden realizar lo siguiente:
